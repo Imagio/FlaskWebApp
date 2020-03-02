@@ -1,5 +1,6 @@
 from app import app
 from flask import render_template
+from datetime import *
 
 
 class User(object):
@@ -20,7 +21,11 @@ def home():
     return render_template("home.html")
 
 
+@app.route('/schedule')
+def schedule():
+    now = datetime.now()
 
+    return render_template("schedule.html", day_of_week=now.isoweekday())
 
 
 
