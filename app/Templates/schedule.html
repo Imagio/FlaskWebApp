@@ -15,46 +15,18 @@
             </tr>
         </thead>
         <tbody>
+            {% for row in data %}
             <tr>
+                <th>{{ row.subtime.start_time }}</th>
+                {% for lesson in row.lessons %}
                 <td>
-                    15:30
+                    {% if lesson != None %}
+                        {{ lesson.subject.name }}
+                    {% endif %}
                 </td>
-                <td>
-                    Олимпиадное программирование<br>
-                    10 класс<br>
-                    ауд 453
-                </td>
-                <td>
-                    Программирование<br>
-                    8 класс<br>
-                    ауд 454а
-                </td>
-                <td></td>
-                <td>
-                    Программирование<br>
-                    8 класс<br>
-                    ауд 453
-                </td>
-                <td></td>
+                {% endfor %}
             </tr>
-            <tr>
-                 <td>
-                    17:00
-                </td>
-                <td>
-                    Программирование<br>
-                    10 класс<br>
-                    ауд 453
-                </td>
-                <td></td>
-                <td>
-                    Программирование<br>
-                    10 класс<br>
-                    ауд 453
-                </td>
-                <td></td>
-                <td></td>
-            </tr>
+            {% endfor %}
         </tbody>
     </table>
 {% endblock %}
