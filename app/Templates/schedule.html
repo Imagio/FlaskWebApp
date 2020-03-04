@@ -5,36 +5,13 @@
         <thead>
             <tr>
                 <th>Время</th>
-
-                {% if (day_of_week == 1) %}
+                {% for weekday in weekdays %}
+                    {% if (day_of_week == weekday.number) %}
                     <th bgcolor="grey">
-                {% else %}
+                    {% else %}
                     <th>
-                {% endif %}ПН</th>
-
-                {% if (day_of_week == 2) %}
-                    <th bgcolor="grey">
-                {% else %}
-                    <th>
-                {% endif %}ВТ</th>
-
-                {% if (day_of_week == 3) %}
-                    <th bgcolor="grey">
-                {% else %}
-                    <th>
-                {% endif %}СР</th>
-
-                {% if (day_of_week == 4) %}
-                    <th bgcolor="grey">
-                {% else %}
-                    <th>
-                {% endif %}ЧТ</th>
-
-                {% if (day_of_week == 5) %}
-                    <th bgcolor="grey">
-                {% else %}
-                    <th>
-                {% endif %}ПТ</th>
+                    {% endif %}{{ weekday.short_name }}</th>
+                {% endfor %}
             </tr>
         </thead>
         <tbody>
