@@ -34,16 +34,12 @@ def schedule():
             self.lessons=[None for day in weekdays]
 
     for subtime in subtimes:
-        row = ScheduleRow(subtime)
-        for i in range(len(weekdays)):
-            weekday = weekdays[i]
-            for lesson in lessons:
-                if lesson.subtime==subtime and lesson.weekday==weekday:
-                    row.lessons[i] = lesson
+        schedule_data.append(ScheduleRow(subtime))
 
-
-
-        schedule_data.append(row)
+    for lesson in lessons:
+        row = lesson.subtime.number - 1
+        column = lesson.weekday.number - 1
+        schedule_data[row].lessons[column] = lesson
 
     return render_template("schedule.html",
                            day_of_week=get_week_day(),
