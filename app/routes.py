@@ -35,7 +35,7 @@ def schedule():
 
     for subtime in subtimes:
         schedule_data.append(ScheduleRow(subtime))
-
+    
     for lesson in lessons:
         row = lesson.subtime.number - 1
         column = lesson.weekday.number - 1
