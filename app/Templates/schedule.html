@@ -1,13 +1,17 @@
 {% extends "layout.html" %}
 
+{% block title %}
+<title>Расписание</title>
+{% endblock %}
+
 {% block content %}
-    <table border="1" cellspacing="0" cellpadding="5">
+    <table>
         <thead>
             <tr>
                 <th>Время</th>
                 {% for weekday in weekdays %}
                     {% if (day_of_week == weekday.number) %}
-                    <th bgcolor="grey">
+                    <th>
                     {% else %}
                     <th>
                     {% endif %}{{ weekday.short_name }}</th>

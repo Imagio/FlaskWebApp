@@ -1,0 +1,15 @@
+body {
+    margin: 0px;
+}
+
+nav {
+    background-color: black;
+    padding: 10px
+}
+
+nav a {
+    color: white;
+    margin: 5px;
+}
+
+
