@@ -21,7 +21,9 @@
                 {% for lesson in row.lessons %}
                 <td>
                     {% if lesson != None %}
-                        {{ lesson.subject.name }}
+                    <span>{{ lesson.subject.name }}</span><br />
+                    <span>{{ lesson.group.name }} класс</span><br />
+                    <span>ауд. {{ lesson.room.name }}</span>
                     {% endif %}
                 </td>
                 {% endfor %}
